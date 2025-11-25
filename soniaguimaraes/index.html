@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sônia Guimarães - Física e Educação Científica</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: #1a1a1a;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 10px 50px rgba(0,0,0,0.3);
+        }
+
+        header {
+            background: linear-gradient(135deg, #2d1b4e 0%, #4a2c6f 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            border-bottom: 5px solid #d4af37;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 1.3em;
+            color: #d4af37;
+            font-weight: 500;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%234a2c6f" width="1200" height="400"/><text x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-size="48" fill="%23d4af37" font-family="Arial">Pioneira da Física Brasileira</text></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 50px 40px;
+        }
+
+        section:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        h2 {
+            color: #4a2c6f;
+            font-size: 2em;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #d4af37;
+        }
+
+        p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .gallery-item-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3em;
+        }
+
+        .gallery-item-caption {
+            padding: 20px;
+            font-size: 1em;
+            color: #1a1a1a;
+            font-weight: 500;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .link-item {
+            background: linear-gradient(135deg, #4a2c6f 0%, #2d1b4e 100%);
+            color: white;
+            padding: 20px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.3s ease;
+            font-size: 1.05em;
+        }
+
+        .link-item:hover {
+            background: linear-gradient(135deg, #5a3c8f 0%, #3d2b6e 100%);
+            transform: translateX(5px);
+        }
+
+        .link-item::before {
+            content: "🔗";
+            font-size: 1.5em;
+        }
+
+        .credits {
+            background: #f8f9fa;
+            color: #1a1a1a;
+            padding: 40px;
+        }
+
+        .credits h2 {
+            color: #4a2c6f;
+            border-bottom-color: #d4af37;
+        }
+
+        .credits ul {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .credits li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 1.05em;
+            color: #1a1a1a;
+        }
+
+        .credits li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #d4af37;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+            border-left: 5px solid #d4af37;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 5px;
+        }
+
+        .highlight-box strong {
+            color: #4a2c6f;
+            font-size: 1.1em;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            
+            section {
+                padding: 30px 20px;
+            }
+            
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        footer {
+            background: #1a0d2e;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sônia Guimarães</h1>
+            <p>Física e Educação Científica</p>
+        </header>
+
+        <div class="hero-image" role="img" aria-label="Imagem representativa de Sônia Guimarães como pioneira da física brasileira"></div>
+
+        <section>
+            <h2>Quem foi Sônia Guimarães</h2>
+            <p>Sônia Guimarães nasceu em 26 de junho de 1957, em Brotas, interior de São Paulo. Filha de um tapeceiro e de uma comerciante dona de buffet, estudou exclusivamente em escolas públicas e destacou-se por suas excelentes notas, especialmente em matemática. Formou-se em Licenciatura em Ciências pela Universidade Federal de São Carlos (UFSCar) em 1979, sendo a primeira pessoa de sua família a ingressar em uma universidade. Entre 1980 e 1983, realizou mestrado em Física Aplicada pela USP em São Carlos. Em 1986, especializou-se em Química e Tecnologia dos Materiais na Itália. Obteve seu doutorado em Materiais Eletrônicos pela Universidade de Manchester, Inglaterra, em 1989, tornando-se a primeira mulher negra brasileira doutora em Física. Em 1993, ingressou como professora no Instituto Tecnológico de Aeronáutica (ITA), sendo a primeira mulher negra da instituição, que na época ainda não aceitava alunas mulheres - isso só mudaria em 1996.</p>
+        </section>
+
+        <section>
+            <h2>Principal Contribuição para a Cultura Brasileira</h2>
+            <p>Sônia Guimarães é uma figura emblemática que transcende suas contribuições científicas em física de semicondutores. Como primeira mulher negra doutora em Física do Brasil e primeira professora negra do ITA, ela rompeu barreiras históricas em uma das instituições mais tradicionais e elitistas do país. Sua área de especialização envolve o desenvolvimento de sensores de radiação infravermelha, tendo inclusive registrado patente brasileira para detectores utilizados em mísseis, posicionando o Brasil na vanguarda tecnológica de defesa.</p>
+            
+            <p>Entretanto, seu maior legado não está apenas nos laboratórios, mas na transformação social que representa. Ao ocupar espaços historicamente negados às mulheres negras, Sônia tornou-se símbolo de resistência contra o racismo estrutural e a discriminação de gênero na academia brasileira. Durante décadas, enfrentou o isolamento de ser a única mulher negra em ambientes predominantemente masculinos, brancos e hostis, onde ouvia constantemente que "não era inteligente o suficiente" - uma forma velada de racismo que não poderia ser legalmente processada.</p>
+
+            <p>Para a população negra brasileira, sua trajetória significa a afirmação de que o conhecimento científico também é construído por mãos negras e que a excelência intelectual não tem cor. Sônia inspira gerações de estudantes negros a acreditarem na possibilidade de ocupar espaços de prestígio científico. Sua atuação como mentora, palestrante e ativista tem sido fundamental para ampliar a representatividade nas universidades. Ela é cofundadora da Federação das Religiões Afro-Brasileiras (Afrobras), mantenedora da Faculdade Zumbi dos Palmares, e presidente da Comissão de Justiça, Equidade, Diversidade e Inclusão da Sociedade Brasileira de Física, trabalhando incansavelmente para que meninas negras vejam nas ciências exatas uma possibilidade real de futuro.</p>
+
+            <div class="highlight-box">
+                <strong>Reconhecimentos:</strong> Em 2023, recebeu a Medalha Santos Dumont de Honra ao Mérito pelos 30 anos no ITA. Foi eleita pela Bloomberg Línea uma das 100 pessoas mais inovadoras da América Latina. Em 2025, a revista Forbes a reconheceu como uma das Mulheres Mais Poderosas do Brasil.
+            </div>
+        </section>
+
+        <section>
+            <h2>Galeria de Contribuições</h2>
+            
+            <div class="gallery">
+                <div class="gallery-item">
+                    <div class="gallery-item-image" role="img" aria-label="Representação do ITA">🎓</div>
+                    <div class="gallery-item-caption">
+                        <strong>Instituto Tecnológico de Aeronáutica</strong><br>
+                        Professora Sônia Guimarães no ITA, instituição onde quebrou barreiras históricas e hoje forma novas gerações de cientistas.
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-item-image" role="img" aria-label="Representação de semicondutores">💻</div>
+                    <div class="gallery-item-caption">
+                        <strong>Física de Semicondutores</strong><br>
+                        Área de pesquisa de Sônia Guimarães: física de semicondutores, fundamental para o desenvolvimento de tecnologias eletrônicas modernas.
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-item-image" role="img" aria-label="Representação de desafios e superação">⚡</div>
+                    <div class="gallery-item-caption">
+                        <strong>Enfrentando o Racismo na Academia</strong><br>
+                        Ao longo de sua carreira, Sônia ouviu de professores que "nunca iria aprender física" e teve bolsas de pesquisa negadas. Mesmo assim, tornou-se referência mundial em sua área, provando que talento e determinação superam preconceitos.
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-item-image" role="img" aria-label="Representação de inovação tecnológica">🔬</div>
+                    <div class="gallery-item-caption">
+                        <strong>Inventora e Pesquisadora</strong><br>
+                        Sônia possui patente brasileira de sensores infravermelhos utilizados em mísseis para identificar aviões em movimento, colocando o Brasil na vanguarda da tecnologia de defesa.
+                    </div>
+                </div>
+            </div>
+
+            <h2 style="margin-top: 50px;">Links e Referências Confiáveis</h2>
+            
+            <div class="links">
+                <a href="http://www.ita.br" class="link-item" target="_blank" rel="noopener noreferrer">
+                    <span>Site Oficial do Instituto Tecnológico de Aeronáutica (ITA)</span>
+                </a>
+                
+                <a href="http://lattes.cnpq.br/3491747153093035" class="link-item" target="_blank" rel="noopener noreferrer">
+                    <span>Currículo Lattes - Trajetória Acadêmica Completa</span>
+                </a>
+                
+                <a href="https://www.geledes.org.br" class="link-item" target="_blank" rel="noopener noreferrer">
+                    <span>Portal Geledés - Instituto da Mulher Negra</span>
+                </a>
+                
+                <a href="https://www.sbfisica.org.br" class="link-item" target="_blank" rel="noopener noreferrer">
+                    <span>Sociedade Brasileira de Física - Comissão JEDI</span>
+                </a>
+
+                <a href="https://www.cnnbrasil.com.br/educacao/conheca-sonia-guimaraes-doutora-em-fisica-e-1a-professora-negra-no-ita/" class="link-item" target="_blank" rel="noopener noreferrer">
+                    <span>Entrevista CNN Brasil - Racismo Estrutural nas Universidades</span>
+                </a>
+
+                <a href="https://iric.com.br/conheca/sonia-guimaraes/" class="link-item" target="_blank" rel="noopener noreferrer">
+                    <span>Biografia Completa e Reconhecimentos</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="credits">
+            <h2>Créditos e Fontes</h2>
+            
+            <h3 style="color: #4a2c6f; margin-top: 30px; margin-bottom: 15px;">Sites Consultados:</h3>
+            <ul>
+                <li>Instituto Tecnológico de Aeronáutica (ITA) - www.ita.br</li>
+                <li>Plataforma Lattes - CNPq - Currículo completo da professora</li>
+                <li>Wikipédia - Biografia de Sônia Guimarães</li>
+                <li>Portal Geledés - Instituto da Mulher Negra</li>
+                <li>CNN Brasil - Entrevistas e matérias sobre racismo na academia</li>
+                <li>Sociedade Brasileira de Física - Comissão JEDI</li>
+                <li>IRIC - Instituto de Referências para a Identidade Cultural</li>
+                <li>GPET Física - Grupo de Pesquisa em Educação e Tecnologia</li>
+                <li>Biblioteca Virtual da FAPESP</li>
+                <li>Instituto Federal da Bahia - Registro de palestras</li>
+            </ul>
+
+            <h3 style="color: #4a2c6f; margin-top: 30px; margin-bottom: 15px;">Imagens:</h3>
+            <ul>
+                <li>Ícones e elementos visuais: design próprio com uso educacional</li>
+                <li>Representações gráficas criadas para fins educacionais</li>
+            </ul>
+
+            <h3 style="color: #4a2c6f; margin-top: 30px; margin-bottom: 15px;">Sobre o Projeto:</h3>
+            <ul>
+                <li>Atividade desenvolvida para o Dia da Consciência Negra</li>
+                <li>Componentes: História e Técnico de Informática</li>
+                <li>Objetivo: valorizar personalidades negras brasileiras e sua contribuição para a cultura nacional</li>
+            </ul>
+        </section>
+
+        <footer>
+            <p>🖤 Projeto Dia da Consciência Negra - 2024 🖤</p>
+            <p>Desenvolvido por: Davi F.</p>
+        </footer>
+    </div>
+</body>
+</html>
